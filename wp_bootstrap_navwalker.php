@@ -68,6 +68,9 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			if ( in_array( 'current-menu-item', $classes ) )
 				$class_names .= ' active';
 
+			if ( in_array( 'current-page-ancestor', $classes ) )
+				$class_names .= ' active';
+
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
 			$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
